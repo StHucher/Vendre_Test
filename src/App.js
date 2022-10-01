@@ -25,9 +25,16 @@ function App() {
       <header className="App-header">
         
         {appState.map(employee => 
+
+          <div>
+            <img src={employee.avatar} alt="avatar"/>
+            <p className="name">{employee.first_name} {employee.last_name}</p>
+            <a href="mailto:{employee.email}">Contact</a>
+          </div>
+        )}
           
-          <p className="name">{employee.first_name}</p>)}
           
+
       </header>
     </div>
   );
