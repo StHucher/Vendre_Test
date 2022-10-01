@@ -4,7 +4,7 @@
 
 .App-main {
   background-color: #fff;
-  display:flex;
+  display:flex; /* use of flex and flex-wrap to manage responsive and word wrap */
   flex-wrap: wrap;
   justify-content:center;
 }
@@ -20,7 +20,7 @@
 }
 
 .avatar{
-  border-radius:50%;
+  border-radius:50%; /* round the images */
   margin-top:1em;
 }
 
