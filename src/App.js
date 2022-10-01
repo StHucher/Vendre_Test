@@ -5,8 +5,17 @@ import {useEffect, useState} from "react";
 /* definition of endpoints */
 
 const baseUrl = "https://reqres.in/api/users";
+const secondUrl = "https://reqres.in/api/users?page=2";
 
 function App() {
+
+  function handlerSecondPage() {
+
+    axios.get(secondUrl).then((reponse) => {
+      const employees = reponse.data.data;
+      setAppState(employees);
+    })
+  }
 
   const [appState, setAppState] = useState([]);
 
@@ -31,11 +40,10 @@ function App() {
             <p className="name">{employee.first_name} {employee.last_name}</p>
             <a className="mail" href="mailto:{employee.email}">Contact</a>
           </div>
-        )}
-          
-          
-
+        )}        
       </main>
+
+      <button onClick={handlerSecondPage}>2</button>
     </div>
   );
 }
