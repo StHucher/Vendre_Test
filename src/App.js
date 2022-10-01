@@ -50,8 +50,8 @@ function App() {
           </div>
         )}        
       </main>
-      <button onClick={handlerFirstPage}>1</button>
-      <button onClick={handlerSecondPage}>2</button>
+      <button className="btn" onClick={handlerFirstPage}>1</button>
+      <button className="btn" onClick={handlerSecondPage}>2</button>
     </div>
   );
 }
