@@ -1,22 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+import {useEffect, useState} from "react";
+
+/* definition of endpoints */
+
+const baseUrl = "https://reqres.in/api/users";
 
 function App() {
+
+  const [appState, setAppState] = useState([]);
+
+  useEffect(() => {
+    axios.get(baseUrl).then((reponse) => {
+
+      const employees = reponse.data.data;
+      setAppState(employees);
+      console.log(employees, "Employees");
+
+    }).catch((error) => {console.log(error)});
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        {appState.map(employee => 
+          
+          <p className="name">{employee.first_name}</p>)}
+          
       </header>
     </div>
   );
