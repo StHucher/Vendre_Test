@@ -22,20 +22,20 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <main className="App-main">
         
         {appState.map(employee => 
 
-          <div>
-            <img src={employee.avatar} alt="avatar"/>
+          <div className="card">
+            <img className="avatar" src={employee.avatar} alt="avatar"/>
             <p className="name">{employee.first_name} {employee.last_name}</p>
-            <a href="mailto:{employee.email}">Contact</a>
+            <a className="mail" href="mailto:{employee.email}">Contact</a>
           </div>
         )}
           
           
 
-      </header>
+      </main>
     </div>
   );
 }
